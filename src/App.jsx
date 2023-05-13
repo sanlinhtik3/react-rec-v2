@@ -1,27 +1,22 @@
-import React from "react";
-
-const Phone = ({ children }) => {
-
-  // const info = ['ios 14', 'black']
-  // const [name, color] = info
-  // console.log(color)
-
-  // const {brand} = props
-  // console.log(brand)
-
-  // console.log(brand)
-
-
-  return (
-    <h1>{children}</h1>
-  );
-}
-
 const App = () => {
+
+  const handleClick = () => {
+    alert("Hello")
+  }
+
+  const handleChange = (event) => {
+    console.log(event.target.value)
+  }
+
+  // measure
+  // check
+
   return (
     <div>
-      <h1>Ract Props</h1>
-      <Phone>Phone</Phone>
+      <h1>Ract Event</h1>
+      <button onClick={handleClick}>Click Me</button>
+      <input type="text" onChange={handleChange} />
+      {/* <button onMouseOver={() => console.log('Hover')}>Hover me</button> */}
     </div>
   );
 };
