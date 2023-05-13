@@ -1,25 +1,33 @@
-function App() {
+import React from "react";
 
-  const fruit = "Apple"
+// Class Component
+// class Go extends React.Component {
+//   render() {
+//     return <h1>Class Component</h1>
+//   }
+// }
 
+
+// Function Component
+// function App() {
+//   return (
+//     <div>
+//       <h1>Ract Components</h1>
+//     </div>
+//   );
+// }
+
+const Phone = (props) => {
+  return <h1>Hello Phone {props.brand} </h1>;
+}
+
+const App = () => {
   return (
     <div>
-      <h1>Hello Hi</h1>
-      <h2>Hello</h2>
-      <img src="" alt="" />
-      <input type="text" />
-
-      <h4>{1 + 1}</h4>
-
-      <h1>List</h1>
-      <ul>
-        <li>{fruit}</li>
-        <li>Orange</li>
-        <li>Mango</li>
-      </ul>
+      <h1>Ract Components</h1>
+      <Phone brand="iPhone" />
     </div>
   );
-  
-}
+};
 
 export default App
