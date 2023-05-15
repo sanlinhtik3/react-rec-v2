@@ -1,29 +1,26 @@
-import React from "react";
+const Phone = ({children}) => {
+  // const numbers = ['one', 'two', 'three']
+  // const [a, b, c] = numbers;
+  // console.log(c)
 
-const Phone = ({ children }) => {
+  // const { brand } = props
 
-  // const info = ['ios 14', 'black']
-  // const [name, color] = info
-  // console.log(color)
+  // console.log(brand);
 
-  // const {brand} = props
-  // console.log(brand)
-
-  // console.log(brand)
-
-
-  return (
-    <h1>{children}</h1>
-  );
-}
+  return <h1>{children}</h1>;
+};
 
 const App = () => {
   return (
-    <div>
-      <h1>Ract Props</h1>
-      <Phone>Phone</Phone>
-    </div>
+    <>
+      <div>React Props</div>
+      <Phone>
+        <h1>iPhone</h1>
+        <h2>14</h2>
+        <h3>ios</h3>
+      </Phone>
+    </>
   );
-};
+}
 
 export default App
