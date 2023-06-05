@@ -1,24 +1,24 @@
+// In react, we can conditionally render components.
+// if statement
+// logical && Operator
+// Ternary Operator ==> // conditional ? true : false
+
 const App = () => {
+  const love = true
 
-  const handleClick = () => {
-    alert("Hello")
-  }
+  // if(love) {
+  //   return <h1>Love you so much.</h1>
+  // }
 
-  const handleChange = (event) => {
-    console.log(event.target.value)
-  }
 
-  // measure
-  // check
-
-  return (
-    <div>
-      <h1>Ract Event</h1>
-      <button onClick={handleClick}>Click Me</button>
-      <input type="text" onChange={handleChange} />
-      {/* <button onMouseOver={() => console.log('Hover')}>Hover me</button> */}
-    </div>
-  );
-};
+    return (
+      <>
+        <h1>React Conditionals</h1>
+        {/* <h1>I can't love you.</h1> */}
+        {/* {love && <h1>I love you.</h1>} */}
+        {love ? <h1>I love you.</h1> : <h1>I can't love you.</h1>}
+      </>
+    );
+}
 
 export default App
