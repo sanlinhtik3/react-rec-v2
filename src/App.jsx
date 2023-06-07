@@ -1,39 +1,31 @@
-import { useState } from "react"
-import TextInput from './components/TextInput'
+import { Fragment } from "react"
+import { Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home";
+import Navigation from "./components/Navigation";
+import Profile from "./pages/Profile";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const App = () => {
-  const [inputs, setInputs] = useState({})
+  return (
+    <>
+      <h1>Hello</h1>
+      <Navigation />
+      <Routes>
+        <Route path="/home" element={<ProtectedRoute user={false}>
+          <Home/>
+        </ProtectedRoute>} />
 
-  // Destructuring
-  // const fruits = ['apple', 'orange', 'mango']
-  // const [a, b, c] = fruits
-  // console.log(c)
+        <Route path="user">
+          <Route index element={<h1>Users</h1>} />
+          <Route path="profile" element={<h1>Profile</h1>} />
+          <Route path="profile/:id" element={<Profile />} />
+          <Route path="skill" element={<h1>Skill</h1>} />
+        </Route>
 
-
-  const handleChange = (event) => {
-    // const name = event.target.name
-    // const value = event.target.value;
-
-    const {name, value} = event.target
-    setInputs((pre) => ({...pre, [name]: value}))
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    console.log(inputs)
-  }
-
-
-    return (
-      <>
-        <h1>React Form</h1>
-        <form onSubmit={handleSubmit}>
-          <TextInput name="username" onChange={handleChange} />
-          <TextInput name="email" onChange={handleChange} />
-          <button>Signup</button>
-        </form>
-      </>
-    );
+        <Route path="*" element={<h1>404 Not found</h1>} />
+      </Routes>
+    </>
+  );
 }
 
 export default App
